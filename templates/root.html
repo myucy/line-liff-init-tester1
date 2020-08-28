@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <title>LIFF myucy test1 app</title>
+    <meta charset="utf-8">
+    <link href="https://fonts.googleapis.com/css?family=Roboto:100,300,400,700" rel="stylesheet">
+    <link href="https://static.line-scdn.net/koromo/edge/2.5.1/koromo.css" rel="stylesheet">
+    <script src="https://static.line-scdn.net/koromo/edge/2.5.1/koromo.js"></script>
+    <script src="https://static.line-scdn.net/liff/edge/2/liff.js"></script>
+    <meta name="viewport"
+        content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1, user-scalable=no">
+</head>
+
+<body>
+
+
+    <br>
+    <div class="container">
+        <div class="alert alert-primary" role="alert">
+        main page    
+        </div>
+        <h4>URI</h4>
+        <div id="url"></div><br>
+        <h4>クエリパラメータ</h4>
+        <div id="query"></div><br>
+        <h4>フラグメント</h4>
+        <div id="flag"></div><br>
+    </div>
+
+</body>
+<script>
+    window.onload = function () {
+        liff
+            .init({
+                //自分のliff id
+                liffId: "1654102793-OpgpwjVw"
+            })
+            .then(() => {
+
+            })
+            .catch((err) => {
+                window.alert(err);
+            });
+
+        liff.ready.then(() => {
+            document.getElementById('url').textContent = location.href
+            document.getElementById('query').textContent = location.search;
+            document.getElementById('flag').textContent = location.hash;
+        })
+    }
+</script>
+
+
+</html>
